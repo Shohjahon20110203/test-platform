@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Zamonaviy Test Platformasi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="theme-toggle">
+            <div class="toggle-container">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </button>
+
+        <!-- Landing Screen -->
+        <div id="landingScreen" class="screen active">
+            <div class="landing-container">
+                <!-- Animated Background -->
+                <div class="animated-bg">
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                    <div class="floating-shape shape-4"></div>
+                    <div class="floating-shape shape-5"></div>
+                </div>
+                
+                <!-- Gradient Orbs -->
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+                
+                <div class="landing-content">
+                    <!-- Logo Section -->
+                    <div class="logo-section">
+                        <div class="logo-container">
+                            <i class="fas fa-book-open book-icon"></i>
+                            <div class="logo-text">
+                                <h1 class="app-title">
+                                    <span class="quiz-text">Quiz</span>
+                                    <span class="app-text">App</span>
+                                </h1>
+                                <p class="app-subtitle">Zamonaviy Test Platformasi</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="welcome-section">
+                        <h2 class="main-title">
+                            <span class="gradient-text">Bilimingizni</span>
+                            <span class="gradient-text-alt">Sinab Ko'ring</span>
+                        </h2>
+                        <p class="subtitle">O'z darajangizni aniqlang va yangi bilimlar oling</p>
+                    </div>
+                    
+                    <form id="userForm" class="user-form">
+                        <div class="form-container">
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="firstName" placeholder="Ismingiz" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-container">
+                                    <i class="fas fa-user-tag input-icon"></i>
+                                    <input type="text" id="lastName" placeholder="Familiyangiz" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Testni Boshlash</span>
+                                <i class="fas fa-arrow-right btn-icon"></i>
+                                <div class="btn-ripple"></div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test List Screen -->
+        <div id="testListScreen" class="screen">
+            <div class="test-list-container">
+                <div class="header">
+                    <div class="user-welcome">
+                        <div class="avatar-container">
+                            <i class="fas fa-user-circle avatar-icon"></i>
+                        </div>
+                        <div class="welcome-info">
+                            <h2 class="welcome-text">Xush kelibsiz!</h2>
+                            <p class="user-name" id="userNameDisplay"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-info">
+                        <div class="time-card">
+                            <i class="fas fa-clock time-icon"></i>
+                            <div class="time-details">
+                                <span class="time-label">Joriy vaqt</span>
+                                <span class="current-time" id="currentTime"></span>
+                            </div>
+                        </div>
+                        <div class="time-card">
+                            <i class="fas fa-hourglass-half timer-icon"></i>
+                            <div class="time-details">
+                                <span class="time-label">Test vaqti</span>
+                                <span class="time-limit">30 daqiqa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tests-section">
+                    <h3 class="section-title">Mavjud Testlar</h3>
+                    <div class="tests-grid">
+                        <div class="test-card" data-test="python">
+                            <div class="card-glow"></div>
+                            <div class="test-icon-container">
+                                <i class="fab fa-python test-icon python-icon"></i>
+                            </div>
+                            <div class="test-info">
+                                <h3 class="test-title">Python</h3>
+                                <p class="test-description">Dasturlash asoslari</p>
+                                <div class="test-stats">
+                                    <span class="question-count">25 ta savol</span>
+                                    <span class="difficulty easy">Oson</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        
+                        <div class="test-card" data-test="html">
+                            <div class="card-glow"></div>
+                            <div class="test-icon-container">
+                                <i class="fab fa-html5 test-icon html-icon"></i>
+                            </div>
+                            <div class="test-info">
+                                <h3 class="test-title">HTML</h3>
+                                <p class="test-description">Veb sahifa yaratish</p>
+                                <div class="test-stats">
+                                    <span class="question-count">25 ta savol</span>
+                                    <span class="difficulty easy">Oson</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        
+                        <div class="test-card" data-test="javascript">
+                            <div class="card-glow"></div>
+                            <div class="test-icon-container">
+                                <i class="fab fa-js-square test-icon js-icon"></i>
+                            </div>
+                            <div class="test-info">
+                                <h3 class="test-title">JavaScript</h3>
+                                <p class="test-description">Interaktiv veb dasturlash</p>
+                                <div class="test-stats">
+                                    <span class="question-count">25 ta savol</span>
+                                    <span class="difficulty easy">Oson</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        
+                        <div class="test-card" data-test="english">
+                            <div class="card-glow"></div>
+                            <div class="test-icon-container">
+                                <i class="fas fa-language test-icon english-icon"></i>
+                            </div>
+                            <div class="test-info">
+                                <h3 class="test-title">English</h3>
+                                <p class="test-description">Ingliz tili asoslari</p>
+                                <div class="test-stats">
+                                    <span class="question-count">25 ta savol</span>
+                                    <span class="difficulty easy">Oson</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Screen -->
+        <div id="testScreen" class="screen">
+            <div class="test-container">
+                <div class="test-header">
+                    <div class="test-info">
+                        <div class="test-title-container">
+                            <i class="fas fa-clipboard-list test-header-icon"></i>
+                            <h3 id="testTitle" class="test-title"></h3>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                                <div class="progress-glow"></div>
+                            </div>
+                            <span id="questionCounter" class="question-counter"></span>
+                        </div>
+                    </div>
+                    <div class="timer-container">
+                        <i class="fas fa-stopwatch timer-icon"></i>
+                        <div class="timer" id="timer">30:00</div>
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question-card">
+                        <div class="question-header">
+                            <i class="fas fa-question-circle question-icon"></i>
+                            <h4 id="questionText" class="question-text"></h4>
+                        </div>
+                        <div class="options" id="optionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="test-controls">
+                    <button id="prevBtn" class="nav-btn prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Oldingi</span>
+                    </button>
+                    <button id="nextBtn" class="nav-btn next-btn">
+                        <span>Keyingi</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button id="finishBtn" class="finish-btn">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Testni Yakunlash</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="results-title">
+                        <i class="fas fa-trophy trophy-icon"></i>
+                        <h2>Test Natijalari</h2>
+                    </div>
+                    <div class="score-circle">
+                        <div class="score-ring">
+                            <div class="score-fill"></div>
+                        </div>
+                        <div class="score-content">
+                            <span id="scorePercentage" class="score-percentage">0%</span>
+                            <span class="score-label">Natija</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-stats">
+                    <div class="stat-card correct-card">
+                        <div class="stat-icon-container">
+                            <i class="fas fa-check-circle stat-icon"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="correctAnswers">0</span>
+                            <span class="stat-label">To'g'ri javoblar</span>
+                        </div>
+                        <div class="stat-glow correct-glow"></div>
+                    </div>
+                    
+                    <div class="stat-card incorrect-card">
+                        <div class="stat-icon-container">
+                            <i class="fas fa-times-circle stat-icon"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="incorrectAnswers">0</span>
+                            <span class="stat-label">Noto'g'ri javoblar</span>
+                        </div>
+                        <div class="stat-glow incorrect-glow"></div>
+                    </div>
+                    
+                    <div class="stat-card time-card">
+                        <div class="stat-icon-container">
+                            <i class="fas fa-clock stat-icon"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="timeTaken">0</span>
+                            <span class="stat-label">Sarflangan vaqt</span>
+                        </div>
+                        <div class="stat-glow time-glow"></div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="downloadCertificate" class="certificate-btn">
+                        <i class="fas fa-download"></i>
+                        <span>Sertifikatni Yuklab Olish</span>
+                        <div class="btn-particles"></div>
+                    </button>
+                    <button id="backToTests" class="back-btn">
+                        <i class="fas fa-redo"></i>
+                        <span>Testlarga Qaytish</span>
+                    </button>
+                </div>
+
+                <div class="answers-review" id="answersReview"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden canvas for certificate generation -->
+    <canvas id="certificateCanvas" style="display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
